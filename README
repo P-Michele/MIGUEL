@@ -1,0 +1,12 @@
+MIGUEL is a minimalist esoteric programming language inspired by Brainfuck.
+ The name “MIGUEL” comes from the language's main commands:
+
+ 1. M(ove to right)
+ 2. I(ncrement)
+ 3. G(o Back)
+ 4. U(p decrement)
+ 5. E(cho)
+ 6. ! Loop End
+ 7. ? Input (1 byte)
+
+ The language is based on a 2048-byte buffer on which instructions can be written using a pointer to the current cell.
