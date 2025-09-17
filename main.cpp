@@ -26,7 +26,7 @@ void execute_command(const char token, const string& program, int& programCounte
             memory[pointer]--;
             break;
         case 'E':        //Prints a cell
-            putchar(memory[pointer]);
+            putchar(static_cast<char>(memory[pointer]));
             break;
         case 'L':        // Loop Start
             if (memory[pointer] == 0) {
@@ -92,13 +92,17 @@ bool validate(const string& program) {
 
 int main() {
     memset(memory, 0, sizeof(memory));
-    //Hello World Program
-    string program = "IIIIIIIIILMIIIIIIIIIMIIIIIIIMIIIMGGGGULEMIIIEMIIIEMIIIIIIEEEMUUUIIIIIIIIEMIIIUUUUUUUUUIEMIIIEMIMIE";
+
+    string program = "MIGUEL!?";
+
     if (!validate(program)) {
         cout << "Error: Unbalanced loops in program!" << endl;
         return 1;
     }
 
+    cout << "Executing MIGUEL" << endl;
     execute(program);
+    cout << endl;
+
     return 0;
 }
