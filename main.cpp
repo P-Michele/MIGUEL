@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <cstring>
 #include <stack>
+#include <cstdio>
 
 using namespace std;
 
@@ -93,7 +94,31 @@ bool validate(const string& program) {
 int main() {
     memset(memory, 0, sizeof(memory));
 
-    string program = "MIGUEL!?";
+    //Hello World in MIGUEL derivato da brainfuck
+    string program = "IIIIIIIIII"      // ++++++++++        cell[0]=10
+    "L"               // [
+    "MIIIIIII"        // >+++++++          cell[1]+=7
+    "MIIIIIIIIII"     // >++++++++++       cell[2]+=10
+    "MIII"            // >+++              cell[3]+=3
+    "MI"              // >+                cell[4]+=1
+    "GGGG"            // <<<<
+    "U"               // -
+    "!"               // ]
+
+    "MIIE"            // >++.              'H' (72)
+    "MIE"             // >+.               'e' (101)
+    "IIIIIIIE"        // +++++++.           'l' (108)
+    "E"               // .                 'l'
+    "IIIE"            // +++.              'o' (111)
+    "MIIE"            // >++.              ' ' (32)
+
+    "GGIIIIIIIIIIIIIIIE" // <<+++++++++++++++. 'W' (15 I)
+    "ME"              // >.                'o'
+    "IIIE"            // +++.              'r'
+    "UUUUUUE"         // ------.           'l'
+    "UUUUUUUUE"       // --------.         'd'
+    "MIE"             // >+.               '!'
+    "ME";             // >.                '\n'
 
     if (!validate(program)) {
         cout << "Error: Unbalanced loops in program!" << endl;
