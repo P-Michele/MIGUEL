@@ -94,7 +94,7 @@ bool validate(const string& program) {
 int main() {
     memset(memory, 0, sizeof(memory));
 
-    //Hello World in MIGUEL derivato da brainfuck
+    //Hello World in MIGUEL obtained from brainfuck
     string program = "IIIIIIIIII"      // ++++++++++        cell[0]=10
     "L"               // [
     "MIIIIIII"        // >+++++++          cell[1]+=7
